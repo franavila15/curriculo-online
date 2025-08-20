@@ -1,0 +1,47 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+header p,
+header a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+}
+
+/* Seções */
+section {
+    margin-bottom: 25px;
+}
+
+section h2 {
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom:
