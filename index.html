@@ -5,105 +5,329 @@
         <meta charset="utf-8" />
         <title>Currículo — Franciele Leal de Ávila</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                max-width: 800px;
-                margin: 40px auto;
-                line-height: 1.6;
-                padding: 0 20px;
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
 
-            h1,
-            h2 {
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                min-height: 100vh;
+                padding: 40px 20px;
+                line-height: 1.6;
                 color: #333;
             }
 
+            .container {
+                max-width: 900px;
+                margin: 0 auto;
+                background: white;
+                border-radius: 20px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+            }
+
+            .header {
+                background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+                color: white;
+                padding: 40px;
+                text-align: center;
+            }
+
+            .header h1 {
+                font-size: 2.5em;
+                font-weight: 300;
+                margin-bottom: 10px;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .content {
+                padding: 40px;
+            }
+
+            h2 {
+                color: #2c3e50;
+                font-size: 1.8em;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 3px solid #3498db;
+                position: relative;
+            }
+
+            h2::after {
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background: linear-gradient(90deg, #e74c3c, #f39c12);
+            }
+
             section {
-                margin-bottom: 24px;
+                margin-bottom: 35px;
+                padding: 25px;
+                background: #f8f9fa;
+                border-radius: 15px;
+                border-left: 5px solid #3498db;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            section:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             }
 
             ul {
                 margin: 0;
-                padding-left: 20px;
+                padding-left: 25px;
+            }
+
+            li {
+                margin-bottom: 8px;
+                position: relative;
+            }
+
+            li::marker {
+                color: #3498db;
+                font-weight: bold;
+            }
+
+            strong {
+                color: #2c3e50;
+                font-weight: 600;
+            }
+
+            p {
+                margin-bottom: 15px;
+                text-align: justify;
+            }
+
+            .skills-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .skills-table thead {
+                background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+                color: white;
+            }
+
+            .skills-table th {
+                padding: 15px;
+                text-align: left;
+                font-weight: 600;
+                font-size: 1.1em;
+            }
+
+            .skills-table td {
+                padding: 15px;
+                border-bottom: 1px solid #ecf0f1;
+            }
+
+            .skills-table tbody tr:nth-child(even) {
+                background-color: #f8f9fa;
+            }
+
+            .skills-table tbody tr:hover {
+                background-color: #e8f4fd;
+                transition: background-color 0.3s ease;
+            }
+
+            .level-badge {
+                display: inline-block;
+                padding: 5px 12px;
+                border-radius: 20px;
+                font-size: 0.9em;
+                font-weight: 600;
+                text-align: center;
+                min-width: 100px;
+            }
+
+            .level-advanced {
+                background: linear-gradient(135deg, #27ae60, #2ecc71);
+                color: white;
+            }
+
+            .level-intermediate {
+                background: linear-gradient(135deg, #f39c12, #e67e22);
+                color: white;
+            }
+
+            .level-basic {
+                background: linear-gradient(135deg, #3498db, #2980b9);
+                color: white;
+            }
+
+            .experience-item {
+                background: white;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-radius: 10px;
+                border-left: 4px solid #3498db;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .experience-title {
+                font-size: 1.2em;
+                color: #2c3e50;
+                margin-bottom: 10px;
+            }
+
+            .experience-period {
+                color: #7f8c8d;
+                font-style: italic;
+                margin-bottom: 15px;
+            }
+
+            @media (max-width: 768px) {
+                .container {
+                    margin: 10px;
+                    border-radius: 15px;
+                }
+                
+                .header {
+                    padding: 30px 20px;
+                }
+                
+                .content {
+                    padding: 20px;
+                }
+                
+                .header h1 {
+                    font-size: 2em;
+                }
+                
+                .skills-table {
+                    font-size: 0.9em;
+                }
+                
+                .skills-table th,
+                .skills-table td {
+                    padding: 10px;
+                }
             }
         </style>
     </head>
 
     <body>
-        <h1>Currículo — Franciele Leal de Ávila</h1>
+        <div class="container">
+            <div class="header">
+                <h1>Franciele Leal de Ávila</h1>
+                <p style="font-size: 1.2em; opacity: 0.9;">Assistente de E-commerce & Desenvolvedora em Formação</p>
+            </div>
 
-        <section>
-            <h2>Objetivo</h2>
-            <p>Atuar na área de Atendimento ao Cliente (home office ou híbrido), com foco em suporte humanizado,
-                resolução de problemas e excelência no relacionamento com o usuário final. Paralelamente, busco
-                oportunidades de transição para Tecnologia, aplicando conhecimentos de Análise e Desenvolvimento de
-                Sistemas e Python.</p>
-        </section>
+            <div class="content">
+                <section>
+                    <h2>Objetivo</h2>
+                    <p>Atuar na área de Atendimento ao Cliente (home office ou híbrido), com foco em suporte humanizado,
+                        resolução de problemas e excelência no relacionamento com o usuário final. Paralelamente, busco
+                        oportunidades de transição para Tecnologia, aplicando conhecimentos de Análise e Desenvolvimento de
+                        Sistemas e Python.</p>
+                </section>
 
-        <section>
-            <h2>Resumo</h2>
-            <p>Assistente de E-commerce nas Lojas Renner com experiência sólida em atendimento, backoffice e rotinas
-                administrativas em ambientes de alta demanda. Vivência recente com suporte via Zendesk, comunicação
-                clara
-                e empática, organização e agilidade na resolução de problemas. Em formação na área de tecnologia,
-                integrando
-                visão técnica ao atendimento.</p>
-        </section>
+                <section>
+                    <h2>Resumo</h2>
+                    <p>Assistente de E-commerce nas Lojas Renner com experiência sólida em atendimento, backoffice e rotinas
+                        administrativas em ambientes de alta demanda. Vivência recente com suporte via Zendesk, comunicação
+                        clara e empática, organização e agilidade na resolução de problemas. Em formação na área de tecnologia,
+                        integrando visão técnica ao atendimento.</p>
+                </section>
 
-        <section>
-            <h2>Experiência</h2>
-            <ul>
-                <li><strong>Lojas Renner S.A.</strong> — Assistente E-commerce (set. 2024 — atual)
-                    <ul>
-                        <li>Atendimento via chat, e-mail e sistema interno (Zendesk).</li>
-                        <li>Identificação e solução de dúvidas, reclamações e necessidades dos clientes.</li>
-                        <li>Criação de vínculos de confiança com comunicação clara e empática.</li>
-                        <li>Acompanhamento e registro de interações conforme diretrizes da empresa.</li>
-                        <li>Apoio ao Backoffice Financeiro: processamento e conferência de estornos; suporte a demandas
-                            internas;
-                            organização de relatórios; resolução de inconsistências e sugestões de melhoria.</li>
-                    </ul>
-                </li>
-                <li><strong>Rosa Café Padaria e Confeitaria</strong> — Gerente (fev. 2018 — mai. 2023)
-                    <ul>
-                        <li>Gestão de equipe, atendimento ao cliente e organização do ambiente.</li>
-                        <li>Controle de estoque, compras, fornecedores e processos administrativos.</li>
-                        <li>Foco na qualidade do atendimento e eficiência operacional.</li>
-                    </ul>
-                </li>
-                <li><strong>Lotérica Já Ganhei Ltda</strong> — Operador / Atendente (jun. 2016 — jul. 2017)
-                    <ul>
-                        <li>Atendimento ao público com foco em agilidade e segurança.</li>
-                        <li>Operações financeiras, manuseio de malotes e reconciliação de contas.</li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
+                <section>
+                    <h2>Experiência Profissional</h2>
+                    <div class="experience-item">
+                        <div class="experience-title"><strong>Lojas Renner S.A.</strong> — Assistente E-commerce</div>
+                        <div class="experience-period">Setembro 2024 — Atual</div>
+                        <ul>
+                            <li>Atendimento via chat, e-mail e sistema interno (Zendesk).</li>
+                            <li>Identificação e solução de dúvidas, reclamações e necessidades dos clientes.</li>
+                            <li>Criação de vínculos de confiança com comunicação clara e empática.</li>
+                            <li>Acompanhamento e registro de interações conforme diretrizes da empresa.</li>
+                            <li>Apoio ao Backoffice Financeiro: processamento e conferência de estornos; suporte a demandas
+                                internas; organização de relatórios; resolução de inconsistências e sugestões de melhoria.</li>
+                        </ul>
+                    </div>
 
-        <section>
-            <h2>Competências</h2>
-            <ul>
-                <li>Atendimento ao Cliente com foco em encantamento.</li>
-                <li>Suporte via Zendesk, chat e e-mail.</li>
-                <li>Processos de Backoffice e rotinas administrativas.</li>
-                <li>Análise de estornos e conferência de dados financeiros.</li>
-                <li>Comunicação escrita, organização e atenção a detalhes.</li>
-                <li>Proatividade, empatia, autonomia e foco em resultados.</li>
-                <li>Excel (nível intermediário).</li>
-                <li>Formação voltada para tecnologia com visão técnica e humana.</li>
-                <li>Facilidade com sistemas, plataformas digitais e multitarefas.</li>
-            </ul>
-        </section>
+                    <div class="experience-item">
+                        <div class="experience-title"><strong>Rosa Café Padaria e Confeitaria</strong> — Gerente</div>
+                        <div class="experience-period">Fevereiro 2018 — Maio 2023</div>
+                        <ul>
+                            <li>Gestão de equipe, atendimento ao cliente e organização do ambiente.</li>
+                            <li>Controle de estoque, compras, fornecedores e processos administrativos.</li>
+                            <li>Foco na qualidade do atendimento e eficiência operacional.</li>
+                        </ul>
+                    </div>
 
-        <section>
-            <h2>Formação</h2>
-            <ul>
-                <li><strong>Bacharelado em Análise e Desenvolvimento de Sistemas</strong> — Faculdade Estácio
-                    (cursando).</li>
-                <li><strong>Desenvolvimento em Python</strong> — Senac Tech (cursando, 274h, início em 2024).</li>
-            </ul>
-        </section>
+                    <div class="experience-item">
+                        <div class="experience-title"><strong>Lotérica Já Ganhei Ltda</strong> — Operador / Atendente</div>
+                        <div class="experience-period">Junho 2016 — Julho 2017</div>
+                        <ul>
+                            <li>Atendimento ao público com foco em agilidade e segurança.</li>
+                            <li>Operações financeiras, manuseio de malotes e reconciliação de contas.</li>
+                        </ul>
+                    </div>
+                </section>
 
+                <section>
+                    <h2>Habilidades</h2>
+                    <table class="skills-table">
+                        <thead>
+                            <tr>
+                                <th>Categoria</th>
+                                <th>Habilidades</th>
+                                <th style="text-align: center;">Nível</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Atendimento ao Cliente</strong></td>
+                                <td>Atendimento humanizado, Suporte via Zendesk, Chat e E-mail, Comunicação empática, Resolução de problemas</td>
+                                <td style="text-align: center;"><span class="level-badge level-advanced">Avançado</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Administrativo</strong></td>
+                                <td>Backoffice, Rotinas administrativas, Análise de estornos, Conferência de dados financeiros, Organização</td>
+                                <td style="text-align: center;"><span class="level-badge level-intermediate">Intermediário</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tecnologia</strong></td>
+                                <td>Python (em formação), Análise e Desenvolvimento de Sistemas, Facilidade com sistemas, Plataformas digitais</td>
+                                <td style="text-align: center;"><span class="level-badge level-basic">Básico</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ferramentas</strong></td>
+                                <td>Excel (intermediário), Zendesk, Sistemas internos, Multitarefas</td>
+                                <td style="text-align: center;"><span class="level-badge level-intermediate">Intermediário</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Soft Skills</strong></td>
+                                <td>Proatividade, Empatia, Autonomia, Foco em resultados, Atenção a detalhes, Comunicação escrita</td>
+                                <td style="text-align: center;"><span class="level-badge level-advanced">Avançado</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section>
+                    <h2>Formação</h2>
+                    <div class="experience-item">
+                        <div class="experience-title"><strong>Bacharelado em Análise e Desenvolvimento de Sistemas</strong></div>
+                        <div class="experience-period">Faculdade Estácio (cursando)</div>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-title"><strong>Desenvolvimento em Python</strong></div>
+                        <div class="experience-period">Senac Tech (cursando, 274h, início em 2024)</div>
+                    </div>
+                </section>
+            </div>
+        </div>
     </body>
 
 </html>
